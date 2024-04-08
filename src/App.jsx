@@ -7,7 +7,7 @@ import Register from './pages/Register/Register'
 
 function App() {
   return(
-    <div className='p-4 h-screen flex items-center justify-center bg-zinc-800'>
+    <div className='justify-center flex items-center p-4 bg-zinc-800'>
       <Register/>
     </div>
   )

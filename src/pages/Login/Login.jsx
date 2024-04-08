@@ -7,7 +7,7 @@ const Login = () => {
             <div className='w-full p-6 rounded-lg bg-gray-600 bg-clip-padding'>
                 <h1 className='text-3xl font-semibold text-left text-orange-50'>Login</h1>
 
-                <form className='mx-20 mt-10 px-4 pt-4 pb-10 left-2 top-1 w-96 bg-gradient-to-bl from-slate-800 to-emerald-600 rounded-md border border-black border-opacity-30 flex-col justify-center items-center gap-2 inline-flex'>
+                <form className='mx-20 mt-10 px-4 pt-4 pb-10 w-96 bg-gradient-to-bl from-slate-800 to-emerald-600 rounded-md border border-black border-opacity-30 flex-col justify-center items-center gap-2 inline-flex'>
                     <div className=''>
                         <label className='label '>
                             <span className='label-text text-lg text-orange-50'>Username</span>

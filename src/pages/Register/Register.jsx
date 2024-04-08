@@ -3,8 +3,8 @@ import { BsSpotify } from "react-icons/bs";
 
 const Register = () => {
     return (
-        <div className='items-center justify-center min-w-96 mx-auto'>
-            <div className='w-full p-6 rounded-lg bg-gray-600 bg-clip-padding justify-start items-start gap-0 flex flex-col'>
+        <div className='w-auto'>
+            <div className=' max-h-fit p-6 rounded-lg bg-gray-600 justify-start items-start gap-0'>
                 <h1 className='text-3xl font-semibold text-left text-orange-50 w-full'>Register</h1>
                 <div className='inline-flex items-start'>
                     <div className="pt-5 flex-col justify-center items-center gap-6 inline-flex">
@@ -54,6 +54,12 @@ const Register = () => {
                                     <span className='label-text text-lg text-orange-50'>Username</span>
                                 </label>
                                 <input type="text" placeholder=' Enter Username' className='w-80 input-bordered h-10 rounded-md textarea-md' />
+                            </div>
+                            <div className=''>
+                                <label className='label '>
+                                    <span className='label-text text-lg text-orange-50'>Email</span>
+                                </label>
+                                <input type="text" placeholder=' Enter Email' className='w-80 input-bordered h-10 rounded-md textarea-md' />
                             </div>
                             <div className=''>
                                 <label className='label '>

@@ -1,10 +1,11 @@
 import React from 'react';
 import { BsSpotify } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
-        <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
-            <div className='w-full p-6 rounded-lg bg-gray-600 bg-clip-padding'>
+        <div className=' flex items-center justify-around flex-col'>
+            <div className=' h-auto p-6 rounded-lg bg-gray-600 justify-start items-start gap-0'>
                 <h1 className='text-3xl font-semibold text-left text-orange-50'>Login</h1>
 
                 <form className='mx-20 mt-10 px-4 pt-4 pb-10 w-96 bg-gradient-to-bl from-slate-800 to-emerald-600 rounded-md border border-black border-opacity-30 flex-col justify-center items-center gap-2 inline-flex'>
@@ -20,17 +21,23 @@ const Login = () => {
                         </label>
                         <input type="text" placeholder=' Enter Password' className='w-80 input-bordered h-10 rounded-md textarea-md' />
                     </div>
-                    <a href='' className='mx-10 w-80 mt-3.5 p-1.5 bg-emerald-500 rounded-btn justify-center items-center inline-flex gap-1 border border-black'>
+                    <div className='w-full pl-4 pt-2 '>
+                        <Link to='/register' className='text-orange-50 text-xs opacity-65 hover:underline hover:text-yellow-300'>
+                            {"Don't"} have an account? Register here.
+                        </Link>
+                    </div>
+                    <button to='' className='mx-10 w-80 mt-3 p-1.5 bg-emerald-500 rounded-btn justify-center items-center inline-flex gap-1 border border-black'>
                         <BsSpotify color='black' size={20} />
                         <span className="text-center text-orange-50 text-sm font-medium font-['Inter'] leading-tight">Login with Spotify</span>
-                    </a>
-                    <a href='' className='mx-10 w-80 mt-3.5 p-2 bg-orange-50 rounded-btn justify-center items-center inline-flex gap-1 border border-black'>
+                    </button>
+                    <button to='' className='mx-10 w-80 mt-3.5 p-2 bg-orange-50 rounded-btn justify-center items-center inline-flex gap-1 border border-black'>
                         <span className="text-center text-emerald-500 text-sm font-medium font-['Inter'] leading-tight">Login</span>
-                    </a>
+                    </button>
 
                 </form>
 
             </div>
+            
         </div>
 
         //     <div className="w-[749px] h-[513px] px-5 py-[19px] bg-gray-600 rounded-[9px] border border-black flex-col justify-start items-center gap-[59px] inline-flex">

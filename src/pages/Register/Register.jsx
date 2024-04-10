@@ -176,8 +176,9 @@ const Register = () => {
                                 <BsSpotify color='black' size={20} />
                                 <span className="text-center text-orange-50 text-sm font-medium font-['Inter'] leading-tight">Register with Spotify</span>
                             </button>
-                            <button to='' className='mx-10 w-80 mt-3 p-2 bg-orange-50 rounded-btn justify-center items-center inline-flex gap-1 border border-black'>
-                                <span className="text-center text-emerald-500 text-sm font-medium font-['Inter'] leading-tight">Register</span>
+                            <button type='submit' disabled={loading} className='mx-10 w-80 mt-3 p-2 bg-orange-50 rounded-btn justify-center items-center inline-flex gap-1 border border-black'>
+                                {loading ? <span className='loading loading-spinner'></span> : <span className="text-center text-emerald-500 text-sm font-medium font-['Inter'] leading-tight">Register</span>}
+                                {/* <span className="text-center text-emerald-500 text-sm font-medium font-['Inter'] leading-tight">Register</span> */}
                             </button>
 
                         </form>

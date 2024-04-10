@@ -21,6 +21,9 @@ const useRegister = () => {
 
         setLoading(true);
         try {
+            if(profilePicUrl === '') {
+                profilePicUrl = null
+            }
             const response = await axios.post(`${backendUrl}/auth/register`, {
                 userName,
                 firstName,
@@ -31,6 +34,7 @@ const useRegister = () => {
                 email
             });
             console.log(response.data);
+            localStorage.setItem("tracktalk-user", JSON.stringify(response.data));
             setAuthUser(response.data)
         } catch (error) {
             toast.error(error.message)
@@ -61,7 +65,7 @@ async function handleInputsError ({firstName, lastName, userName, password, conf
         return false; 
     }
 
-    const emailFound = await axios.get(`${backendUrl}/users/email/found/${email}`).data;
+    const emailFound = await axios.get(`${backendUrl}/users/email/found/${email}`);
     if (emailFound.data.found){
         toast.error('Email Already Registered');
         return false; 

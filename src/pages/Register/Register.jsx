@@ -33,6 +33,7 @@ const Register = () => {
     const handleSpotifyRegister = async (e) => {
         e.preventDefault();
         window.location.href = `${BACKEND_URL}/auth/spotify`;
+        // await axios.get(`${BACKEND_URL}/auth/spotify`);
         console.log(testData);
     }
 

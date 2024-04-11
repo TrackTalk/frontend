@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import LandingPage from './pages/LandingPage/LandingPage'
 import MainPage from './pages/MainPage/MainPage'
+import SpotifyCallBackHandle from './pages/SpotifyCallBackHandlePage/spotifyCallBackHandePage'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/main" element={<MainPage />} />
+        <Route path="/callback" element={<SpotifyCallBackHandle />} />
       </Routes>
       <Toaster/>
     </div>

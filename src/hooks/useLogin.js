@@ -18,9 +18,14 @@ const useLogin = () => {
             const response = await axios.post(`${BACKEND_URL}/auth/login`, {
                 userName,
                 password
+            }, {
+                withCredentials: true,
             });
-            localStorage.setItem("tracktalk-user", JSON.stringify(response.data));
-            setAuthUser(response.data)
+            if(response) {
+                localStorage.setItem("tracktalk-user", JSON.stringify(response.data.foundUser));
+                setAuthUser(response.data)
+            }
+            
         } catch (error) {
             toast.error(error.message)
         } finally {

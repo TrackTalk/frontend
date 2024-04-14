@@ -15,6 +15,7 @@ const Login = () => {
         e.preventDefault();
         console.log("here")
         await login( userName, password );
+        window.location.href = '/main';
     }
 
     const handleSpotifyLogin = async(e) => {

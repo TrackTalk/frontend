@@ -26,6 +26,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await register(inputs);
+        window.location.href = '/main';
 
     }
 

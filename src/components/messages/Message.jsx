@@ -3,7 +3,7 @@ const Message = () => {
         <div className={`chat chat-start`}>
             <div className='chat-image avatar'>
                 <div className='w-10 rounded-full'>
-                    <img src="" alt="chat bubble" />
+                    <img src="https://avatar.iran.liara.run/public" alt="chat bubble" />
                 </div>
             </div>
             <div className={`chat-bubble text-white pb-2`}>Message</div>

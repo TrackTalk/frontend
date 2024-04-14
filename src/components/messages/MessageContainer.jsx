@@ -10,10 +10,12 @@ const MessageContainer = () => {
             {/* For no chat selection OR */}
             <div className='bg-slate-500 px-4 py-2 mb-2 inline-flex items-center'>
                 <div className='w-20 h-20 rounded-full bg-slate-300'>
-                    <img src="" alt="chat bubble" />
+                    <img src="https://avatar.iran.liara.run/public" alt="chat bubble" />
                 </div>
-
-                <span className='w-20 h-20 label-text text-base text-center'>To: sdfsdf</span>
+                <div className="flex items-center">
+                <span className='ml-4 h-20 flex justify-start items-center label-text text-xl text-orange-100 font-bold text-center'>John Doe</span>
+                </div>
+                
 
             </div>
             <Messages />

@@ -32,9 +32,11 @@ const useRegister = () => {
                 profilePicUrl,
                 spotifyLogin: false,
                 email
+            }, {
+                withCredentials: true,
             });
             console.log(response.data);
-            localStorage.setItem("tracktalk-user", JSON.stringify(response.data));
+            localStorage.setItem("tracktalk-user", JSON.stringify(response.data.foundUser));
             setAuthUser(response.data)
         } catch (error) {
             toast.error(error.message)

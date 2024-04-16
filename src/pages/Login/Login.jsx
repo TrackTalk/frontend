@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import useLogin from '../../hooks/useLogin';
 
 const Login = () => {
-    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+    const BACKEND_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;
 
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");

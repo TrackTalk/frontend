@@ -6,7 +6,7 @@ import axios from 'axios';
 import useRegister from '../../hooks/useRegister';
 
 const Register = () => {
-    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+    const BACKEND_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;
     // console.log(process.env.BACKEND_URL);
 
     const { loading, register } = useRegister();

@@ -11,7 +11,7 @@ const Conversation = ({conversation, lastIndex}) => {
     const isSelected = selectedConversation?.conversationId === conversation.conversationId;
 
 
-    console.log(authUser);
+
     return (
         <div className="">
             <div 

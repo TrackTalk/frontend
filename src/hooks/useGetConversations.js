@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import useConversation from '../store/useConversation';
 
 const useGetConversations = () => {
     const [loading, setLoading] = useState(false);
-    const [conversations, setConversations] = useState([]);
+    // const [conversations, setConversations] = useState([]);
+    const {conversations, setConversations} = useConversation();
     const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
     useEffect(() => {

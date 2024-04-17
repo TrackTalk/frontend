@@ -22,9 +22,11 @@ const useLogin = () => {
                 withCredentials: true,
             });
             if(response) {
-                localStorage.setItem("tracktalk-user", JSON.stringify(response.data.foundUser));
-                setAuthUser(response.data)
+                console.log(response);
+                
             }
+            localStorage.setItem("tracktalk-user", JSON.stringify(response.data.foundUser));
+            setAuthUser(response.data)
             
         } catch (error) {
             toast.error(error.message)

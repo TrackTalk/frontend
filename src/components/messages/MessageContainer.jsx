@@ -6,11 +6,11 @@ import { useAuthContext } from "../../context/AuthContext";
 const MessageContainer = () => {
     const { selectedConversation, setSelectedConversation } = useConversation();
 
-    const {authUser} = useAuthContext();
+    const { authUser } = useAuthContext();
 
     const myId = authUser.userId;
     let otherUserData
-    if(selectedConversation ){
+    if (selectedConversation) {
         const isUser1 = myId === selectedConversation.user1Id ? false : true;
         otherUserData = isUser1 ? selectedConversation.user1 : selectedConversation.user2;
     }
@@ -23,11 +23,11 @@ const MessageContainer = () => {
     //         }
     //     };
     // }, [selectedConversation]);
-    
+
     // const 
     // console.log(otherUserData)
 
-    
+
     return (
         <div className='md:min-w-[350px] flex flex-col bg-gray-600 rounded-md'>
             {!selectedConversation ? (
@@ -39,11 +39,13 @@ const MessageContainer = () => {
                     </div>
                     {/* For no chat selection OR */}
                     <div className='bg-slate-500 px-4 py-2 mb-2 inline-flex items-center'>
-                        <div className='w-20 h-20 rounded-full bg-slate-300'>
-                            <img src="https://avatar.iran.liara.run/public" alt="chat bubble" />
+                        <div className='chat-image avatar'>
+                            <div className='w-20 rounded-full'>
+                                <img src={otherUserData.profilePicUrl} alt="chat bubble" />
+                            </div>
                         </div>
                         <div className="flex items-center">
-                            <span className='ml-4 h-20 flex justify-start items-center label-text text-xl text-orange-100 font-bold text-center'>{otherUserData? `${otherUserData.firstName} ${otherUserData.lastName}` : ""}</span>
+                            <span className='ml-4 h-20 flex justify-start items-center label-text text-xl text-orange-100 font-bold text-center'>{otherUserData ? `${otherUserData.firstName} ${otherUserData.lastName}` : ""}</span>
                         </div>
 
 

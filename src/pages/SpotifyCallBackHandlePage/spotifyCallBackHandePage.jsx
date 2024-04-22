@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
+import useRefreshToken from "../../hooks/useRefreshToken";
 
 const SpotifyCallBackHandle = () => {
     const location = useLocation();
@@ -9,20 +10,26 @@ const SpotifyCallBackHandle = () => {
     useEffect(() => {
         const params = new URLSearchParams(location.search);
         const loginStatus = params.get("loginStatus");
-        setTimeout(() => {
-            if(loginStatus){
+        const fetchData = async () => {
+            if (loginStatus) {
                 const loginStatusData = JSON.parse(decodeURIComponent(loginStatus));
                 const userData = loginStatusData.foundUser;
                 localStorage.setItem("tracktalk-user", JSON.stringify(userData));
-                setAuthUser(userData)
+                setAuthUser(userData);
+
+                // Start refreshing the Spotify token
+                // useRefreshToken();
+
                 window.location.href = '/main';
             }
             setLoading(false);
-        }, 2000)
+        };
+
+        setTimeout(fetchData, 2000);
         
     
       
-    }, [location.search]);
+    }, [location.search, setAuthUser]);
 
     return (
         <div className="flex items-center justify-center h-screen">

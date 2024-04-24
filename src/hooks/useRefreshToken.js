@@ -26,7 +26,7 @@ const useRefreshToken = () => {
             } catch (error) {
                 console.log("Error refreshing token: ", error);
             }
-        }, 10000); //
+        }, 100000); //
 
         return () => clearInterval(refreshInterval);
     }, [setAuthUser]);

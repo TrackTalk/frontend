@@ -15,7 +15,7 @@ export const SocketContextProvider = ({children}) => {
     const BACKEND_URL = import.meta.env.VITE_BACKEND_URL; 
 
     useEffect(() => {
-        if(authUser.userId) {
+        if(authUser) {
             const socket = io(BACKEND_URL,{
                 query: {
                     userId: authUser.userId,

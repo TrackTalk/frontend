@@ -12,10 +12,17 @@ const MainPage = () => {
   // useSpotifyWebPlayback();
   return (
     <div>MainPage
-      <Player />
-      <ConversationContainer />
-      <div className='divider p-3'></div>
-      <MessageContainer/>
+      <div>
+        <Player />
+      </div>
+
+      <div className='flex flex-col justify-center items-center'>
+        <ConversationContainer />
+        <div className='divider p-3'></div>
+        <MessageContainer />
+      </div>
+
+
     </div>
   )
 }

@@ -9,14 +9,16 @@ import Register from './pages/Register/Register'
 import LandingPage from './pages/LandingPage/LandingPage'
 import MainPage from './pages/MainPage/MainPage'
 import SpotifyCallBackHandle from './pages/SpotifyCallBackHandlePage/spotifyCallBackHandePage'
+import Navbar from './components/navbar/Navbar'
 
 
 function App() {
   const test = import.meta.env.VITE_BACKEND_URL;
   // console.log(test);
   return(
-    <div className=' min-h-full justify-center flex items-center p-4 bg-zinc-800  overflow-x-auto'>
-      
+    <div className=' min-h-full justify-center flex flex-col items-center p-4 bg-zinc-800  overflow-x-auto'>
+      <Navbar />
+
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
@@ -25,6 +27,7 @@ function App() {
         <Route path="/callback" element={<SpotifyCallBackHandle />} />
       </Routes>
       <Toaster/>
+      
     </div>
   )
 }

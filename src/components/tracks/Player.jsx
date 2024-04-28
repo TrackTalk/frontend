@@ -10,7 +10,7 @@ const Player = () => {
     const trackUri = "spotify:track:24jvD83UgLmrdGjhWTFslY"
 
     useEffect(() => {
-        setPlay(true);
+        setPlay(false);
         setSelectedTrack(trackUri);
         console.log(play);
     }, [trackUri])
@@ -19,12 +19,15 @@ const Player = () => {
 
     return (
 
-        <div className='pb-10'>
+        <div className='p-2 flex flex-col items-center justify-center bg-[#4B6376] rounded-lg fixed top-30'>
             {/* try implementing blank track state */}
 
             {selectedTrack ? (<div>
-                <div className='w-[450px]'>
+                <div className='w-[300px]'>
                     <SpotifyPlayer
+                        name="Track Talk"
+                        persistDeviceSelection={true}
+                        layout="horizontal-cover"
                         token={authUser.accessToken}
                         showSaveIcon
                         callback={state => {

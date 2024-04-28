@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
-import useRefreshToken from "../../hooks/useRefreshToken";
+import useRefreshToken from "../../hooks/auth/useRefreshToken";
 
 const SpotifyCallBackHandle = () => {
     const location = useLocation();

@@ -16,7 +16,7 @@ function App() {
   const test = import.meta.env.VITE_BACKEND_URL;
   // console.log(test);
   return(
-    <div className=' min-h-full justify-center flex flex-col items-center p-4 bg-zinc-800  overflow-x-auto'>
+    <div className=' min-h-full justify-center flex flex-col items-center p-2 bg-zinc-800  overflow-x-auto'>
       <Navbar />
 
       <Routes>

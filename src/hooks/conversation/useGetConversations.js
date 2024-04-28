@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import useConversation from '../store/useConversation';
+import useConversation from '../../store/useConversation';
 
 const useGetConversations = () => {
     const [loading, setLoading] = useState(false);
@@ -33,4 +33,4 @@ const useGetConversations = () => {
     return {loading, conversations};
 }
 
-export default useGetConversations
+export default useGetConversations;

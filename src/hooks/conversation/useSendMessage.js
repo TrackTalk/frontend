@@ -1,8 +1,8 @@
-import useConversation from "../store/useConversation";
+import useConversation from "../../store/useConversation";
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 
 const useSendMessage = () => {
     const [loading, setLoading] = useState(false);

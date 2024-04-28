@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BsSpotify } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-import useLogin from '../../hooks/useLogin';
+import useLogin from '../../hooks/auth/useLogin';
 
 const Login = () => {
     const BACKEND_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;

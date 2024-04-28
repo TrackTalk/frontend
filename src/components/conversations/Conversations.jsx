@@ -1,4 +1,4 @@
-import useGetConversations from "../../hooks/useGetConversations";
+import useGetConversations from "../../hooks/conversation/useGetConversations";
 import Conversation from "./Conversation";
 import { useAuthContext } from "../../context/AuthContext";
 
@@ -8,7 +8,7 @@ const Conversations = () => {
     // console.log(authUser);
     return(
         <div className="flex justify-center items-center">
-            <div className='max-h-96 min-h-96 my-2 w-[96%] py-2 flex flex-col overflow-auto border border-black'>
+            <div className='max-h-96 min-h-80 my-2 w-[96%] py-2 flex flex-col overflow-auto border border-black'>
             {
                 conversations.map((conversation, index) => {
                     return(

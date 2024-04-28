@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import axios from "axios";
-import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 
 const useRefreshToken = () => {
     const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;

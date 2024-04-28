@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from "../../assets/TrackTalk_logo_icons.png"
 import { useAuthContext } from '../../context/AuthContext'
-import useLogout from '../../hooks/useLogout'
+import useLogout from '../../hooks/auth/useLogout'
 import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
@@ -14,9 +14,9 @@ const Navbar = () => {
     
     
     return (
-        <div className='navbar bg-base-100'>
+        <div className='navbar mb-3 bg-base-100'>
             <div className='flex-1 pl-5'>
-                <div className='flex flex-auto items-center transition-transform transform hover:scale-110'>
+                <div className='flex flex-auto items-center transition-transform transform hover:scale-105'>
                     <button onClick={() => {if(authUser) navigate("/main"); else navigate("/")}} className='w-14 py-1'>
                         <img src={logo} className=''></img>
                     </button>
@@ -38,13 +38,13 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                     <div className="flex items-center">
-                                        <span className='flex justify-start items-center label-text text-xl text-orange-100 font-bold text-center'>{authUser.userName}</span>
+                                        <span className='flex justify-start items-center label-text text-lg text-orange-100 font-bold text-center hover:underline'>My Profile</span>
                                     </div>
                                 </div>
                             </li> 
                             <li>
-                                <button onClick={handleLogout} class="w-20 h-10 px-5 py-3 bg-red-500 rounded-md justify-center items-center gap-2 inline-flex">
-                                    <div class="text-orange-50 text-sm font-bold font-['Inter'] leading-normal">Logout</div>
+                                <button onClick={handleLogout} className="btn btn-error w-20 h-10 px-5 py-3 bg-red-500 rounded-md justify-center items-center gap-2 inline-flex">
+                                    <div className="text-orange-50 text-sm font-bold font-['Inter'] leading-normal">Logout</div>
                                 </button>
                             </li>
                         </ul>

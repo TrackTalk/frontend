@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import useTrack from "../store/useTrack";
-import { useAuthContext } from "../context/AuthContext";
+import useTrack from "../../store/useTrack";
+import { useAuthContext } from "../../context/AuthContext";
 
 
 const useSpotifyWebPlayback = () => {

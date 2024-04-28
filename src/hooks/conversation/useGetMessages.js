@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { useAuthContext } from "../context/AuthContext";
-import useConversation from "../store/useConversation";
+import { useAuthContext } from "../../context/AuthContext";
+import useConversation from "../../store/useConversation";
 import axios from 'axios';
 import toast from "react-hot-toast";
 

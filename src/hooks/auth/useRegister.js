@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 import axios from "axios";
 
 const backendUrl = `${import.meta.env.VITE_BACKEND_URL}/api`

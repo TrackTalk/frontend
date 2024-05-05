@@ -7,19 +7,23 @@ import useTrack from "../../store/useTrack";
 const Player = () => {
     const [play, setPlay] = useState(false);
     const { selectedTrack, setSelectedTrack } = useTrack();
-    const trackUri = "spotify:track:24jvD83UgLmrdGjhWTFslY"
+    let trackUri = "";
+
+    if(selectedTrack) {
+        trackUri = `spotify:track:${selectedTrack.spotifyId}`
+    }
+    
 
     useEffect(() => {
         setPlay(false);
-        setSelectedTrack(trackUri);
         console.log(play);
-    }, [trackUri])
+    }, [selectedTrack])
     const { authUser } = useAuthContext();
 
 
     return (
 
-        <div className='p-2 flex flex-col items-center justify-center bg-[#4B6376] rounded-lg fixed top-30'>
+        <div className='p-2 flex flex-col items-center justify-center bg-[#4B6376] rounded-lg'>
             {/* try implementing blank track state */}
 
             {selectedTrack ? (<div>
@@ -33,8 +37,8 @@ const Player = () => {
                         callback={state => {
                             if (!state.isPlaying) setPlay(false)
                         }}
-                        play={play}
-                        uris={trackUri ? [trackUri] : []}
+                        play={true}
+                        uris={selectedTrack ? [trackUri] : []}
                         styles={{
                             bgColor: '#4B6376',
                             color: '#F8F2E8',
@@ -49,7 +53,7 @@ const Player = () => {
                 </div>
             </div>
             ) : (
-                <div className='w-[450px] h-24 p-5 flex justify-center items-center bg-gray-600 rounded-lg'>
+                <div className='w-full min-w-[300px] h-24 p-5 flex justify-center items-center bg-[#4B6376] rounded-lg'>
                     <p className='text-xl font-semibold text-orange-50'>Please select a track to play.</p>
                 </div>
             )}

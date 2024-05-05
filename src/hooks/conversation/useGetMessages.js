@@ -33,7 +33,7 @@ const useGetMessages = () => {
                     console.log(response);
                     if (!response) throw new Error("No data in server's response");
                     
-                    setMessages(response.data);
+                    setMessages(response.data.messages);
                 }
                 
 

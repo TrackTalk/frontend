@@ -1,4 +1,3 @@
-import { stringify } from "postcss";
 import { useAuthContext } from "../../context/AuthContext";
 import { useSocketContext } from "../../context/SocketContext";
 import useConversation from "../../store/useConversation";
@@ -12,6 +11,8 @@ const Conversation = ({conversation, lastIndex}) => {
     const {selectedConversation, setSelectedConversation} = useConversation()
     const isSelected = selectedConversation?.conversationId === conversation.conversationId;
     const {onlineUsers} = useSocketContext();
+
+    console.log(conversation);
     
     const isOnline = onlineUsers.includes(`${otherUserData.userId}`);
     // console.log(onlineUsers.includes(parseInt(otherUserData.userId)));

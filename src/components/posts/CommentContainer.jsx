@@ -18,17 +18,27 @@ const CommentContainer = () => {
             <div className=' w-full'>
                 <h1 className="chat-header text-2xl text-orange-100 font-bold px-2 pb-2">Comments</h1>
             </div>
-            <div className='w-[95%] p-4 bg-slate-700 rounded-md justify-center max-h-[460px] overflow-scroll overflow-x-hidden '>
-                { comments.length > 0 &&
-                    comments.map((comment) => {
-                        return (
-                            <div key={comment.commentId} ref={lastCommentRef}>
-                                <Comment comment={comment} />
-                            </div>
-                        )
-                    })
-                }
-            </div>
+            {
+                comments.length == 0 ? <div className='w-[95%] p-4 bg-slate-700 rounded-md justify-center'>
+                    <span className='text-sm'>
+                    No comments yet! Be the first to comment below.
+                    </span>
+                    
+                </div> :
+                    <div className='w-[95%] p-4 bg-slate-700 rounded-md justify-center max-h-[460px] overflow-scroll overflow-x-hidden '>
+                        {comments.length > 0 &&
+                            comments.map((comment) => {
+                                return (
+                                    <div key={comment.commentId} ref={lastCommentRef}>
+                                        <Comment comment={comment} />
+                                    </div>
+                                )
+                            })
+                        }
+
+                    </div>
+            }
+
 
             <div className=''>
                 <CommentInput />

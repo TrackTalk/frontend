@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { BsSpotify } from "react-icons/bs";
 import axios from 'axios';
 import useRegister from '../../hooks/auth/useRegister';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const BACKEND_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;
@@ -60,7 +61,7 @@ const Register = () => {
                 setInputs({...inputs, profilePicUrl: data?.location});
             }    
         } catch (error) {
-            next(error);
+            toast(error.message);
         }
         
     }

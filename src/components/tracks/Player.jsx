@@ -6,8 +6,10 @@ import useTrack from "../../store/useTrack";
 
 const Player = () => {
     const [play, setPlay] = useState(false);
-    const { selectedTrack, setSelectedTrack } = useTrack();
+    const { selectedTrack } = useTrack();
     let trackUri = "";
+
+    console.log(selectedTrack);
 
     if(selectedTrack) {
         trackUri = `spotify:track:${selectedTrack.spotifyId}`
@@ -16,7 +18,6 @@ const Player = () => {
 
     useEffect(() => {
         setPlay(false);
-        console.log(play);
     }, [selectedTrack])
     const { authUser } = useAuthContext();
 

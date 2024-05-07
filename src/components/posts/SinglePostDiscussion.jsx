@@ -18,7 +18,7 @@ const SinglePostDiscussion = ({postId}) => {
     console.log("single post discussion 2", selectedPost);
     
     return (
-        <div className='bg-gray-900 min-w-[420px] max-w-[480px] py-2 flex flex-col gap-4 items-center max-h-[1140px] overflow-scroll overflow-x-hidden scrollbar-hide'>
+        <div className='bg-gray-900 min-w-[420px] max-w-[480px] py-2 flex flex-col gap-4 items-center min-h-full max-h-[1140px] overflow-scroll overflow-x-hidden scrollbar-hide'>
             <div className=' w-full'>
                 <h1 className="chat-header text-3xl text-orange-100 font-bold pt-2 pl-2 ">Post Discussion</h1>
             </div>

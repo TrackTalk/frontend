@@ -12,7 +12,6 @@ const Conversation = ({conversation, lastIndex}) => {
     const isSelected = selectedConversation?.conversationId === conversation.conversationId;
     const {onlineUsers} = useSocketContext();
 
-    console.log(conversation);
     
     const isOnline = onlineUsers.includes(`${otherUserData.userId}`);
     // console.log(onlineUsers.includes(parseInt(otherUserData.userId)));

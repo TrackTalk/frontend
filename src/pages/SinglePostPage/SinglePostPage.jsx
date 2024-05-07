@@ -10,6 +10,8 @@ import { useParams } from 'react-router-dom'
 import SinglePostDiscussion from '../../components/posts/SinglePostDiscussion'
 import useGetAPost from '../../hooks/posts/useGetAPost'
 import usePost from '../../store/usePost'
+import LeftPane from '../../components/pane/LeftPane'
+import RightPane from '../../components/pane/RightPane'
 
 
 const SinglePostPage = () => {
@@ -30,21 +32,12 @@ const SinglePostPage = () => {
     return (
         <div className='w-full flex flex-auto gap-4 justify-center'>
 
-            <div className=' w-80 '>
-                <div className='sticky top-10'>
-                    <Player />
-                </div>
-
-            </div>
+            <LeftPane />
 
             <SinglePostDiscussion postId={postId}/>
 
 
-            <div className='flex flex-col items-center'>
-                <ConversationContainer />
-                <div className='divider p-3'></div>
-                <MessageContainer />
-            </div>
+            <RightPane />
 
 
         </div>

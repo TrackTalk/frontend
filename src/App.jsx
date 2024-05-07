@@ -12,6 +12,7 @@ import SpotifyCallBackHandle from './pages/SpotifyCallBackHandlePage/spotifyCall
 import Navbar from './components/navbar/Navbar'
 import useRefreshToken from './hooks/auth/useRefreshToken'
 import SinglePostPage from './pages/SinglePostPage/SinglePostPage'
+import CreatePostPage from './pages/CreatePostPage/CreatePostPage'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/main" element={<MainPage />} />
         <Route path="/callback" element={<SpotifyCallBackHandle />} />
         <Route path="/post/:postId" element={<SinglePostPage/>} />
+        <Route path="/create/post" element={<CreatePostPage/>}/>
       </Routes>
       <Toaster/>
       

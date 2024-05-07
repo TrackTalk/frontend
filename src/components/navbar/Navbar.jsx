@@ -14,7 +14,7 @@ const Navbar = () => {
     
     
     return (
-        <div className='navbar mb-3 bg-base-100'>
+        <div className='w-full min-w-[1080px] navbar mb-3 bg-base-100'>
             <div className='flex-1 pl-5'>
                 <div className='flex flex-auto items-center transition-transform transform hover:scale-105'>
                     <button onClick={() => {if(authUser) navigate("/main"); else navigate("/")}} className='w-14 py-1'>

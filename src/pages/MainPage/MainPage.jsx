@@ -7,6 +7,8 @@ import Player from '../../components/tracks/Player'
 import PostsContainer from '../../components/posts/PostsContainer'
 // import TestPlayer from '../../components/tracks/TestPlayer'
 // import TestPlayer2 from '../../components/tracks/Player'
+import LeftPane from '../../components/pane/LeftPane'
+import RightPane from '../../components/pane/RightPane'
 
 const MainPage = () => {
 
@@ -14,21 +16,12 @@ const MainPage = () => {
   return (
     <div className='w-full flex flex-auto gap-4 justify-center'>
 
-      <div className=' w-80 '>
-        <div className='sticky top-10'>
-          <Player />
-        </div>
-        
-      </div>
+      <LeftPane />
 
       <PostsContainer />
      
 
-      <div className='flex flex-col items-center'>
-        <ConversationContainer />
-        <div className='divider p-3'></div>
-        <MessageContainer />
-      </div>
+      <RightPane />
 
 
     </div>

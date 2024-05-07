@@ -9,12 +9,10 @@ const MessageContainer = () => {
     const { authUser } = useAuthContext();
 
     const myId = authUser.userId;
-    let otherUserData
-    console.log("in message container", selectedConversation)
+    let otherUserData;
     if (selectedConversation) {
         const isUser1 = myId === selectedConversation.user1Id ? false : true;
         otherUserData = isUser1 ? selectedConversation.user1 : selectedConversation.user2;
-        console.log("in message container", otherUserData)
     }
 
     // useEffect(() => {

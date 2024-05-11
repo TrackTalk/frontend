@@ -9,7 +9,8 @@ import useListenMessages from './useListenMessages';
 const useFindConversation = () => {
     const [loading, setLoading] = useState(false);
     const {selectedConversation, setSelectedConversation, setMessages, messages} = useConversation()
-    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+    useListenMessages();
     const findConversation = async(userId) => {
         setLoading(true);
         try {
@@ -28,7 +29,7 @@ const useFindConversation = () => {
             if (!message) throw new Error("No data in server's response");
             
             await setMessages(message.data.messages);
-            useListenMessages();
+            // useListenMessages();
             
             // if(selectedConversation) {
             //     // console.log(otherUserData.userId)

@@ -13,13 +13,15 @@ import Navbar from './components/navbar/Navbar'
 import useRefreshToken from './hooks/auth/useRefreshToken'
 import SinglePostPage from './pages/SinglePostPage/SinglePostPage'
 import CreatePostPage from './pages/CreatePostPage/CreatePostPage'
+import ProfileViewPage from './pages/ProfileViewPage.jsx/ProfileViewPage'
+import ProfileEditPage from './pages/ProfileEditPage/ProfileEditPage'
 
 
 function App() {
   const test = import.meta.env.VITE_BACKEND_URL;
   useRefreshToken();
   // console.log(test);
-  return(
+  return (
     <div className=' min-h-full min-w-full justify-center flex flex-col items-center p-2 bg-zinc-800'>
       <Navbar />
 
@@ -29,11 +31,13 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/callback" element={<SpotifyCallBackHandle />} />
-        <Route path="/post/:postId" element={<SinglePostPage/>} />
-        <Route path="/create/post" element={<CreatePostPage/>}/>
+        <Route path="/post/:postId" element={<SinglePostPage />} />
+        <Route path="/create/post" element={<CreatePostPage />} />
+        <Route path="/user/:userId/posts" element={<ProfileViewPage />} />
+        <Route path="/edit/user" element={<ProfileEditPage />}/>
       </Routes>
-      <Toaster/>
-      
+      <Toaster />
+
     </div>
   )
 }

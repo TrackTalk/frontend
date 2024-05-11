@@ -19,6 +19,7 @@ const CreatePostForm = () => {
     // const {setPosts, posts} = usePosts();
     const imageRef = useRef();
     const navigate = useNavigate();
+    const imgBBKey = import.meta.env.VITE_IMGBB_API_KEY;
 
     const handleImageUpload = async (e) => {
         e.preventDefault();
@@ -46,16 +47,23 @@ const CreatePostForm = () => {
         try {
             const imageFile = imageRef.current.files[0];
             const formData = new FormData();
-            formData.append("file", imageFile);
+            formData.append("image", imageFile);
 
-            const response = await fetch("https://api.escuelajs.co/api/v1/files/upload", {
-                method: "post",
+            const response = await fetch(`https://api.imgbb.com/1/upload?key=` + imgBBKey, {
+                method: 'POST',
                 body: formData
             });
-            if (response.status === 201) {
+            // const data = await response.json();
+            // console.log(data.data.image.url);
+
+            if (!response.ok) {
+                toast.error('Failed to upload image');
+            }
+            if (response.status === 200) {
                 const data = await response.json();
-                setImagePreview(data?.location)
-                setPhotoUrl(data?.location);
+                console.log(data);
+                setImagePreview(data?.data.image.url)
+                setPhotoUrl(data?.data.image.url);
             }
         } catch (error) {
 

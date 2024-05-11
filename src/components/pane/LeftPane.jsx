@@ -19,7 +19,7 @@ const LeftPane = () => {
                         </div>
                     </div>
                     <div className='pl-3 flex flex-col justify-center text-orange-100 opacity-85'>
-                        <p>{authUser.firstName} {authUser.lastName}</p>
+                        <p>{authUser.firstName} {authUser.lastName} </p>
                         <span className="text-emerald-500 text-xs font-light font-['Inter']">{authUser.userName}</span>
                     </div>
                 </div>

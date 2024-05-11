@@ -8,7 +8,7 @@ const useCreateConversation = () => {
     const [loading, setLoading] = useState(false);
     const {authUser} = useAuthContext();
     const {conversations, setConversations, setMessages, setSelectedConversation} = useConversation();
-    const createCoversation = async(user) => {
+    const createConversation = async(user) => {
         setLoading(true);
         try {
             
@@ -29,7 +29,7 @@ const useCreateConversation = () => {
         }
     }
 
-    return {createCoversation, loading};
+    return {createConversation, loading};
 }
 
 export default useCreateConversation;

@@ -18,7 +18,7 @@ import { formatDateTime } from '../../utils/formatDateTime';
 const SinglePost = (post) => {
     if(!post.post) {
         console.log("no post here")
-        return <div></div>}
+        return (<div></div>)}
     const  navigate = useNavigate();
     let postData = post.post;
     if(!postData) console.log("is post.post?", false)
@@ -35,7 +35,7 @@ const SinglePost = (post) => {
     const { likePost, removeLikePost, loading } = useLikePost();
     const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
     const { isFav, makeFavoriteTrack, removeFavoriteTrack } = useFavortieTrack(postTrack.spotifyId);
-    const { createCoversation } = useCreateConversation();
+    const { createConversation } = useCreateConversation();
     const { findConversation } = useFindConversation();
 
     useEffect(() => {
@@ -83,21 +83,25 @@ const SinglePost = (post) => {
     const handleConversation = async () => {
         const found = await findConversation(postOwner.userId);
         // setSelectedConversation(found);
-        if (!found) createCoversation(postOwner);
+        if (!found) createConversation(postOwner);
     }
 
     const handleSetPost = async () => {
         // await setSelectedPost(post);
         // console.log(selectedPost);
-
-        console.log("go to post")
         navigate(`/post/${postData.postId}`);
 
     }
 
+    const handleProfileViewPage = async () => {
+        navigate(`/user/${postOwner.userId}/posts`);
+    }
+
     return (
+        
         <div className='card p-4 w-11/12 bg-base-100 shadow-xl min-w-[400px] max-w-[400px]'>
             {/* Post Owner Section */}
+            
             <div className='card-title items-center pb-2 px-2 justify-between'>
                 <div className='flex flex-auto items-center'>
                     <div className='avatar'>
@@ -106,7 +110,7 @@ const SinglePost = (post) => {
                         </div>
                     </div>
                     <div className='pl-3 flex flex-col justify-center text-orange-100 opacity-85'>
-                        <p>{postOwner.firstName} {postOwner.lastName}</p>
+                        <button onClick={handleProfileViewPage} className='hover:underline'>{postOwner.firstName} {postOwner.lastName}</button>
                         <span className="opacity-70 text-orange-50 text-xs font-light font-['Inter']">{postDate}</span>
                     </div>
                 </div>

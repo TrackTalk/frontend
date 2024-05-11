@@ -12,7 +12,7 @@ const useLikePost = () => {
         setLoading(true);
         try {
             const res = await axios.post(`${BACKEND_URL}/api/posts/${postId}/like/${authUser.userId}`);
-            if (!res.data) throw new Error("Server error");
+            if (!res.data) throw new Error("Internal Server error");
 
         } catch (error) {
             toast.error(error.message);
@@ -26,7 +26,7 @@ const useLikePost = () => {
         setLoading(true);
         try {
             const res = await axios.delete(`${BACKEND_URL}/api/posts/${postId}/removeLike/${authUser.userId}`);
-            if(!res.data) throw new Error("Server error");
+            if(!res.data) throw new Error("Internal Server error");
         } catch (error) {
             toast.error(error.message);
         } finally {

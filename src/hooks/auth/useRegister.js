@@ -22,7 +22,7 @@ const useRegister = () => {
         setLoading(true);
         try {
             if(profilePicUrl === '') {
-                profilePicUrl = null
+                profilePicUrl = `https://avatar.iran.liara.run/username?username=${firstName}+${lastName}`
             }
             const response = await axios.post(`${backendUrl}/auth/register`, {
                 userName,
@@ -37,7 +37,7 @@ const useRegister = () => {
             });
             console.log(response.data);
             localStorage.setItem("tracktalk-user", JSON.stringify(response.data.foundUser));
-            setAuthUser(response.data)
+            setAuthUser(response.data.foundUser)
         } catch (error) {
             toast.error(error.message)
         } finally {

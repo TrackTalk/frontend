@@ -21,7 +21,7 @@ const SinglePost = (post) => {
         return (<div></div>)}
     const  navigate = useNavigate();
     let postData = post.post;
-    if(!postData) console.log("is post.post?", false)
+    // if(!postData) console.log("is post.post?", false)
     console.log("insinglepost: ", post)
     const { authUser } = useAuthContext();
     const { setSelectedTrack } = useTrack();

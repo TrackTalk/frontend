@@ -17,7 +17,7 @@ const useGetConversations = () => {
                 const res = await axios.get(`${BACKEND_URL}/api/messages/all`, {
                     withCredentials: true,
                 });
-                // console.log(res);
+                console.log(res.data);
                 setConversations(res.data)
 
             } catch (error) {

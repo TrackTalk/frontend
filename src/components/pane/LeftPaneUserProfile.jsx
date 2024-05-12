@@ -97,7 +97,7 @@ const LeftPaneUserProfile = (profile) => {
                 </div>
             </div>
             <div className={`my-2 sticky top-[19.5rem] transition-transform duration-500 ${showCardTitle ? 'translate-y-0' : '-translate-y-72'}`}>
-                {authUser.userId === profileData.userId ?
+                {authUser.userId === profileData?.userId ?
                     <button onClick={handleEditPage} className={`w-[48%] p-2.5 mb-2 bg-orange-400 rounded-[50px] border border-black justify-center items-center gap-2.5 inline-flex transition-colors duration-300`}>
                         <div className={`w-52 text-center text-orange-50 text-[13px] font-semibold font-['Inter'] leading-tight transition-opacity duration-200`}>Edit Profile</div>
                     </button> :
@@ -105,7 +105,7 @@ const LeftPaneUserProfile = (profile) => {
                         <div className={`w-52 text-center text-orange-50 text-[13px] font-semibold font-['Inter'] leading-tight transition-opacity duration-200`}>{followed ? "Unfollow" : "Follow"}</div>
                     </button>
                 }
-                {authUser.userId === profileData.userId ?
+                {authUser.userId === profileData?.userId ?
                     <button onClick={handleCreatePostPage} className={`w-[48%] ml-3 p-2.5 mb-2 bg-emerald-500 rounded-[50px] border border-black justify-center items-center gap-2.5 inline-flex transition-colors duration-300`}>
                         <div className={`w-52 text-center text-orange-50 text-[13px] font-semibold font-['Inter'] leading-tight transition-opacity duration-200`}>Create Post</div>
                     </button> :

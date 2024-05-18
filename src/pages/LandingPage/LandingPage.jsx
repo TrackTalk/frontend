@@ -1,6 +1,7 @@
 import React from 'react'
 import useGetAllTracks from '../../hooks/tracks/useGetAllTracks'
 import useGetPostCount from '../../hooks/posts/useGetPostCount';
+import { useNavigate } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { BsSpotify } from "react-icons/bs";
@@ -9,6 +10,8 @@ import { BsSpotify } from "react-icons/bs";
 const LandingPage = () => {
     const { tracks, trackCount } = useGetAllTracks();
     const { postCount } = useGetPostCount();
+    const navigate = useNavigate();
+    const BACKEND_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;
     const responsive = {
         desktop: {
             breakpoint: { max: 5000, min: 1024 },
@@ -26,6 +29,18 @@ const LandingPage = () => {
         },
     };
 
+    const handleLogin = () => {
+        navigate('/login');
+    }
+
+    const handleRegister = () => {
+        navigate('/register');
+    }
+
+    const handleSpotifyLogin = () => {
+        window.location.href = `${BACKEND_URL}/auth/spotify`;
+    }
+ 
     console.log(postCount);
     return (
         <div className='w-[860px] flex flex-col border border-black px-5 justify-center items-center'>
@@ -107,12 +122,12 @@ const LandingPage = () => {
                     <div className='w-fit flex flex-col gap-2 px-3 py-5 border border-black bg-slate-700 '>
                         <h1 className='text-orange-50 font-bold px-3 text-sm'>Join the Community, Discuss your taste on <span className='text-emerald-500'> Music</span>.</h1>
                         <div className='flex flex-auto items-center justify-center gap-2'>
-                            <button className='p-2 w-28 rounded-btn btn hover:bg-emerald-800 bg-emerald-500'> <span className='text-center text-orange-50 '>Register</span> </button>
-                            <button className='p-2 w-36 rounded-btn btn hover:bg-emerald-800 bg-emerald-500 flex flex-auto'> <BsSpotify color='black' size={20} /><span className='text-center text-orange-50'>Register with Spotify</span> </button>
+                            <button onClick={handleRegister} className='p-2 w-28 rounded-btn btn hover:bg-emerald-800 bg-emerald-500'> <span className='text-center text-orange-50 '>Register</span> </button>
+                            <button onClick={handleSpotifyLogin} className='p-2 w-36 rounded-btn btn hover:bg-emerald-800 bg-emerald-500 flex flex-auto'> <BsSpotify color='black' size={20} /><span className='text-center text-orange-50'>Register with Spotify</span> </button>
                         </div>
                         <div className='flex flex-auto gap-7 justify-center items-center'>
                             <p className='text-xs text-orange-50/50'>Already Registered? <br />Welcome back to the Community</p>
-                            <button className='p-2 w-36 rounded-btn btn hover:bg-emerald-100 bg-orange-50'> <span className='text-center text-emerald-500 '>Login</span> </button>
+                            <button onClick={handleLogin} className='p-2 w-36 rounded-btn btn hover:bg-emerald-100 bg-orange-50'> <span className='text-center text-emerald-500 '>Login</span> </button>
                         </div>
                     </div>
 

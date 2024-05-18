@@ -11,6 +11,9 @@ const Navbar = () => {
     const handleLogout = async () => {
         await logout();
     }
+    const handleProfileView = () => {
+        navigate(`/user/${authUser.userId}/posts`)
+    }
     
     
     return (
@@ -37,9 +40,9 @@ const Navbar = () => {
                                             <img src={authUser.profilePicUrl} alt="chat bubble" />
                                         </div>
                                     </div>
-                                    <div className="flex items-center">
+                                    <button onClick={handleProfileView} className="flex items-center">
                                         <span className='flex justify-start items-center label-text text-lg text-orange-100 font-bold text-center hover:underline'>My Profile</span>
-                                    </div>
+                                    </button>
                                 </div>
                             </li> 
                             <li>
